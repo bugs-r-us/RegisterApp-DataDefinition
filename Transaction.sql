@@ -5,6 +5,7 @@ CREATE TABLE transaction (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
   employeeid uuid NOT NULL DEFAULT CAST('00000000-0000-0000-0000-000000000000' AS uuid),
   total bigint NOT NULL DEFAULT(0), 
+  transactionstatus int NOT NULL DEFAULT(0),
   createdon timestamp without time zone NOT NULL DEFAULT now(),
   CONSTRAINT transaction_pkey PRIMARY KEY (id)
 ) WITH (
